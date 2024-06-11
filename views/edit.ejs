@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class=" h-screen w-full p-10"style="background-color:black;">
+     
+   
+
+      <form action="/editPost/<%= post._id %>" method="post" enctype="multipart/form-data">
+        <input
+          class="bg-transparent p-3 w-2/3 outline-none  rounded-lg text-white block mb-3"
+          name="title"
+          style="box-shadow:inset 0px 0px 10px 0px rgb(115, 112, 112);"
+          type="text"
+          value="<%= post.title %>"
+          placeholder="Enter Post Title"
+        />
+        <textarea
+          class="resize-none bg-transparent p-3 w-2/3 outline-none  rounded-lg text-white mb-3"
+          name="content"
+          style="box-shadow:inset 0px 0px 10px 0px rgb(115, 112, 112);"
+          placeholder="whats in your mind!"
+        >
+ <%= post.content %> </textarea
+        >
+        <div class="flex w-2/3 items-center justify-between bg-grey-lighter mb-3">
+          <label  style="box-shadow:inset 0px 0px 10px 0px rgb(115, 112, 112);"
+            class="w-2/3 flex flex-col items-center px-2 py-3  rounded-lg shadow-lg tracking-wide  cursor-pointer text-white"
+          >
+            
+            <span class="text-base leading-normal">Select a profile image</span>
+            <input type="file" name="image" class="hidden" />
+          </label>
+
+        </div>
+
+        <input
+          class=" p-3 rounded-lg w-40 mt-3 text-white block"
+          type="submit"
+          style="box-shadow:inset 0px 0px 40px 0px rgb(243, 243, 22);text-align: center;"/>
+          value="Edit Post"
+        />
+      </form>
+      <div class="flex justify-center"style="margin-top:14%;">
+        
+        <a class="block px-7 py-3 rounded-lg text-white"style="box-shadow:inset 0px 0px 40px 0px rgb(195, 25, 30,0.6);text-align: center;" href="/logout"> Logout</a>
+      </div>
+    </div>
+  </body>
+</html>
